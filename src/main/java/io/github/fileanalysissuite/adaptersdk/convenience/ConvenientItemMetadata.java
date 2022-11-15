@@ -62,8 +62,6 @@ public final class ConvenientItemMetadata
         private Instant accessedTime;
         private Instant modifiedTime;
         private Integer version;
-        private String contentHash;
-        private String metadataHash;
         private final Map<String, Serializable> additionalMetadata;
 
         private Builder()
@@ -76,8 +74,6 @@ public final class ConvenientItemMetadata
             this.accessedTime = null;
             this.modifiedTime = null;
             this.version = null;
-            this.contentHash = null;
-            this.metadataHash = null;
             this.additionalMetadata = new HashMap<>();
         }
 
@@ -138,20 +134,6 @@ public final class ConvenientItemMetadata
         }
 
         @Nonnull
-        public Builder contentHash(final String value)
-        {
-            contentHash = value;
-            return this;
-        }
-
-        @Nonnull
-        public Builder metadataHash(final String value)
-        {
-            metadataHash = value;
-            return this;
-        }
-
-        @Nonnull
         public Builder additionalMetadata(final String key, final Serializable value)
         {
             additionalMetadata.put(key, value);
@@ -182,8 +164,6 @@ public final class ConvenientItemMetadata
         private final Instant accessedTime;
         private final Instant modifiedTime;
         private final Integer version;
-        private final String contentHash;
-        private final String metadataHash;
         private final Map<String, Serializable> additionalMetadata;
 
         private Impl(final Builder builder)
@@ -196,8 +176,6 @@ public final class ConvenientItemMetadata
             this.accessedTime = builder.accessedTime;
             this.modifiedTime = Objects.requireNonNull(builder.modifiedTime, "modifiedTime must not be null");
             this.version = builder.version;
-            this.contentHash = builder.contentHash;
-            this.metadataHash = builder.metadataHash;
             this.additionalMetadata = builder.getAdditionalMetadata();
         }
 
@@ -250,18 +228,6 @@ public final class ConvenientItemMetadata
         public Integer getVersion()
         {
             return version;
-        }
-
-        @Override
-        public String getContentHash()
-        {
-            return contentHash;
-        }
-
-        @Override
-        public String getMetadataHash()
-        {
-            return metadataHash;
         }
 
         @Override
