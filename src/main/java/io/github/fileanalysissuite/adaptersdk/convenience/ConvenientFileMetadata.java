@@ -15,7 +15,7 @@
  */
 package io.github.fileanalysissuite.adaptersdk.convenience;
 
-import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.ItemMetadata;
+import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.FileMetadata;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Collections;
@@ -24,9 +24,9 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Nonnull;
 
-public final class ConvenientItemMetadata
+public final class ConvenientFileMetadata
 {
-    private ConvenientItemMetadata()
+    private ConvenientFileMetadata()
     {
     }
 
@@ -37,15 +37,15 @@ public final class ConvenientItemMetadata
     }
 
     @Nonnull
-    public static ItemMetadata create(
-        final String itemLocation,
+    public static FileMetadata create(
+        final String fileLocation,
         final String name,
         final long size,
         final Instant modifiedTime
     )
     {
         return builder()
-            .itemLocation(itemLocation)
+            .fileLocation(fileLocation)
             .name(name)
             .size(size)
             .modifiedTime(modifiedTime)
@@ -54,7 +54,7 @@ public final class ConvenientItemMetadata
 
     public static final class Builder
     {
-        private String itemLocation;
+        private String fileLocation;
         private String name;
         private String title;
         private Long size;
@@ -66,7 +66,7 @@ public final class ConvenientItemMetadata
 
         private Builder()
         {
-            this.itemLocation = null;
+            this.fileLocation = null;
             this.name = null;
             this.title = null;
             this.size = null;
@@ -78,9 +78,9 @@ public final class ConvenientItemMetadata
         }
 
         @Nonnull
-        public Builder itemLocation(final String value)
+        public Builder fileLocation(final String value)
         {
-            itemLocation = Objects.requireNonNull(value);
+            fileLocation = Objects.requireNonNull(value);
             return this;
         }
 
@@ -148,15 +148,15 @@ public final class ConvenientItemMetadata
         }
 
         @Nonnull
-        public ItemMetadata build()
+        public FileMetadata build()
         {
             return new Impl(this);
         }
     }
 
-    private static final class Impl implements ItemMetadata
+    private static final class Impl implements FileMetadata
     {
-        private final String itemLocation;
+        private final String fileLocation;
         private final String name;
         private final String title;
         private final long size;
@@ -168,7 +168,7 @@ public final class ConvenientItemMetadata
 
         private Impl(final Builder builder)
         {
-            this.itemLocation = Objects.requireNonNull(builder.itemLocation, "itemLocation must not be null");
+            this.fileLocation = Objects.requireNonNull(builder.fileLocation, "fileLocation must not be null");
             this.name = Objects.requireNonNull(builder.name, "name must not be null");
             this.title = builder.title;
             this.size = Objects.requireNonNull(builder.size, "size must not be null");
@@ -181,9 +181,9 @@ public final class ConvenientItemMetadata
 
         @Nonnull
         @Override
-        public String getItemLocation()
+        public String getFileLocation()
         {
-            return itemLocation;
+            return fileLocation;
         }
 
         @Nonnull
