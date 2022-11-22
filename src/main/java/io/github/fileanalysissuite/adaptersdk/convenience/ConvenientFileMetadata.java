@@ -40,14 +40,12 @@ public final class ConvenientFileMetadata
     public static FileMetadata create(
         final String fileLocation,
         final String name,
-        final long size,
         final Instant modifiedTime
     )
     {
         return builder()
             .fileLocation(fileLocation)
             .name(name)
-            .size(size)
             .modifiedTime(modifiedTime)
             .build();
     }
