@@ -40,14 +40,12 @@ public final class ConvenientFileMetadata
     public static FileMetadata create(
         final String fileLocation,
         final String name,
-        final long size,
         final Instant modifiedTime
     )
     {
         return builder()
             .fileLocation(fileLocation)
             .name(name)
-            .size(size)
             .modifiedTime(modifiedTime)
             .build();
     }
@@ -99,7 +97,7 @@ public final class ConvenientFileMetadata
         }
 
         @Nonnull
-        public Builder size(final long value)
+        public Builder size(final Long value)
         {
             size = value;
             return this;
@@ -159,7 +157,7 @@ public final class ConvenientFileMetadata
         private final String fileLocation;
         private final String name;
         private final String title;
-        private final long size;
+        private final Long size;
         private final Instant createdTime;
         private final Instant accessedTime;
         private final Instant modifiedTime;
@@ -200,7 +198,7 @@ public final class ConvenientFileMetadata
         }
 
         @Override
-        public long getSize()
+        public Long getSize()
         {
             return size;
         }
