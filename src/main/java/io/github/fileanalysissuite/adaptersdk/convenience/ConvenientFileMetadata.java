@@ -99,7 +99,7 @@ public final class ConvenientFileMetadata
         }
 
         @Nonnull
-        public Builder size(final long value)
+        public Builder size(final Long value)
         {
             size = value;
             return this;
@@ -159,7 +159,7 @@ public final class ConvenientFileMetadata
         private final String fileLocation;
         private final String name;
         private final String title;
-        private final long size;
+        private final Long size;
         private final Instant createdTime;
         private final Instant accessedTime;
         private final Instant modifiedTime;
@@ -200,7 +200,7 @@ public final class ConvenientFileMetadata
         }
 
         @Override
-        public long getSize()
+        public Long getSize()
         {
             return size;
         }
