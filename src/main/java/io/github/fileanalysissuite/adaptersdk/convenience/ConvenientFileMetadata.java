@@ -169,7 +169,7 @@ public final class ConvenientFileMetadata
             this.fileLocation = Objects.requireNonNull(builder.fileLocation, "fileLocation must not be null");
             this.name = Objects.requireNonNull(builder.name, "name must not be null");
             this.title = builder.title;
-            this.size = Objects.requireNonNull(builder.size, "size must not be null");
+            this.size = builder.size;
             this.createdTime = builder.createdTime;
             this.accessedTime = builder.accessedTime;
             this.modifiedTime = Objects.requireNonNull(builder.modifiedTime, "modifiedTime must not be null");
