@@ -55,7 +55,6 @@ public final class ConvenientFileMetadata
         private String fileLocation;
         private String name;
         private String title;
-        private Long size;
         private Instant createdTime;
         private Instant accessedTime;
         private Instant modifiedTime;
@@ -67,7 +66,6 @@ public final class ConvenientFileMetadata
             this.fileLocation = null;
             this.name = null;
             this.title = null;
-            this.size = null;
             this.createdTime = null;
             this.accessedTime = null;
             this.modifiedTime = null;
@@ -93,13 +91,6 @@ public final class ConvenientFileMetadata
         public Builder title(final String value)
         {
             title = value;
-            return this;
-        }
-
-        @Nonnull
-        public Builder size(final Long value)
-        {
-            size = value;
             return this;
         }
 
@@ -156,9 +147,8 @@ public final class ConvenientFileMetadata
     {
         private final String fileLocation;
         private final String name;
-        private final String title;
-        private final Long size;
         private final Instant createdTime;
+        private final String title;
         private final Instant accessedTime;
         private final Instant modifiedTime;
         private final Integer version;
@@ -169,7 +159,6 @@ public final class ConvenientFileMetadata
             this.fileLocation = Objects.requireNonNull(builder.fileLocation, "fileLocation must not be null");
             this.name = Objects.requireNonNull(builder.name, "name must not be null");
             this.title = builder.title;
-            this.size = builder.size;
             this.createdTime = builder.createdTime;
             this.accessedTime = builder.accessedTime;
             this.modifiedTime = Objects.requireNonNull(builder.modifiedTime, "modifiedTime must not be null");
@@ -195,12 +184,6 @@ public final class ConvenientFileMetadata
         public String getTitle()
         {
             return title;
-        }
-
-        @Override
-        public Long getSize()
-        {
-            return size;
         }
 
         @Override
