@@ -147,8 +147,8 @@ public final class ConvenientFileMetadata
     {
         private final String fileLocation;
         private final String name;
-        private final Instant createdTime;
         private final String title;
+        private final Instant createdTime;
         private final Instant accessedTime;
         private final Instant modifiedTime;
         private final Integer version;
