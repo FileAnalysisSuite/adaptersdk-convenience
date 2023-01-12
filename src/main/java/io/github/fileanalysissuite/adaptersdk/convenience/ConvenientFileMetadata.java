@@ -16,7 +16,6 @@
 package io.github.fileanalysissuite.adaptersdk.convenience;
 
 import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.FileMetadata;
-import java.io.Serializable;
 import java.time.Instant;
 import java.util.Collections;
 import java.util.HashMap;
