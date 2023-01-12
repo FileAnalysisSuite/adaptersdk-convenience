@@ -122,6 +122,13 @@ public final class ConvenientFileMetadata
         }
 
         @Nonnull
+        public Builder additionalMetadata(final String key, final String value)
+        {
+            additionalMetadata.put(key, Collections.singleton(value));
+            return this;
+        }
+
+        @Nonnull
         public Builder additionalMetadata(final String key, final Iterable<String> value)
         {
             additionalMetadata.put(key, value);
