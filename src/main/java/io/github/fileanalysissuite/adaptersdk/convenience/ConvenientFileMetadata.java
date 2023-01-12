@@ -16,7 +16,6 @@
 package io.github.fileanalysissuite.adaptersdk.convenience;
 
 import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.FileMetadata;
-import java.io.Serializable;
 import java.time.Instant;
 import java.util.Collections;
 import java.util.HashMap;
@@ -59,7 +58,7 @@ public final class ConvenientFileMetadata
         private Instant accessedTime;
         private Instant modifiedTime;
         private Integer version;
-        private final Map<String, Serializable> additionalMetadata;
+        private final Map<String, Iterable<String>> additionalMetadata;
 
         private Builder()
         {
@@ -123,13 +122,20 @@ public final class ConvenientFileMetadata
         }
 
         @Nonnull
-        public Builder additionalMetadata(final String key, final Serializable value)
+        public Builder additionalMetadata(final String key, final String value)
+        {
+            additionalMetadata.put(key, Collections.singletonList(value));
+            return this;
+        }
+
+        @Nonnull
+        public Builder additionalMetadata(final String key, final Iterable<String> value)
         {
             additionalMetadata.put(key, value);
             return this;
         }
 
-        private Map<String, Serializable> getAdditionalMetadata()
+        private Map<String, ? extends Iterable<String>> getAdditionalMetadata()
         {
             return additionalMetadata.isEmpty()
                 ? null
@@ -152,7 +158,7 @@ public final class ConvenientFileMetadata
         private final Instant accessedTime;
         private final Instant modifiedTime;
         private final Integer version;
-        private final Map<String, Serializable> additionalMetadata;
+        private final Map<String, ? extends Iterable<String>> additionalMetadata;
 
         private Impl(final Builder builder)
         {
@@ -212,7 +218,7 @@ public final class ConvenientFileMetadata
         }
 
         @Override
-        public Map<String, Serializable> getAdditionalMetadata()
+        public Map<String, ? extends Iterable<String>> getAdditionalMetadata()
         {
             return additionalMetadata;
         }
