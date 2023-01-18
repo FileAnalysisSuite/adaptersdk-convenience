@@ -222,5 +222,13 @@ public final class ConvenientFileMetadata
         {
             return additionalMetadata;
         }
+
+        @Override
+        public String toString()
+        {
+            return "ConvenientFileMetadata [" + "fileLocation=" + fileLocation + ", name=" + name + ", title=" + title
+                + ", createdTime=" + createdTime + ", accessedTime=" + accessedTime + ", modifiedTime=" + modifiedTime
+                + ", version=" + version + ", additionalMetadata=" + additionalMetadata + ']';
+        }
     }
 }
