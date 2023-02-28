@@ -19,6 +19,7 @@ import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.FileMetad
 import java.time.Instant;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Nonnull;
@@ -47,6 +48,12 @@ public final class ConvenientFileMetadata
             .name(name)
             .modifiedTime(modifiedTime)
             .build();
+    }
+
+    @Nonnull
+    public static FileMetadata wrapStringMap(final Map<String, List<String>> metadata)
+    {
+        return new StringMapFileMetadata(metadata);
     }
 
     public static final class Builder
