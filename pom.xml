@@ -29,7 +29,7 @@
 
     <groupId>io.github.fileanalysissuite.adaptersdk.convenience</groupId>
     <artifactId>adaptersdk-convenience</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-254</version>
 
     <description>FAS Custom Adapter Java SDK Convenience Objects</description>
     <url>https://github.com/FileAnalysisSuite/adaptersdk-convenience</url>
