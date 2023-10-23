@@ -16,6 +16,7 @@
 package io.github.fileanalysissuite.adaptersdk.convenience;
 
 import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.FileMetadata;
+import jakarta.annotation.Nonnull;
 import java.time.DateTimeException;
 import java.time.Instant;
 import java.util.Arrays;
@@ -24,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
 
 final class StringMapFileMetadata implements FileMetadata
 {

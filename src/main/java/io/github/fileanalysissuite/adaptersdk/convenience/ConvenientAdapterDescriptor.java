@@ -17,10 +17,10 @@ package io.github.fileanalysissuite.adaptersdk.convenience;
 
 import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.AdapterDescriptor;
 import io.github.fileanalysissuite.adaptersdk.interfaces.extensibility.RepositorySettingDefinition;
+import jakarta.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
-import javax.annotation.Nonnull;
 
 public final class ConvenientAdapterDescriptor
 {
